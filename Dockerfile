@@ -19,9 +19,7 @@ ENV BACKUP=false \
     LOCAL_DB_PATH=/mnt/DB2 \
     LOCAL_STOP='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop' \
     LOCAL_START='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'    
-    
-VOLUME  ["/etc/localtime", "/sshkey", "/mnt/DB2", "/var/run/docker.sock"]
-     
+         
 RUN chmod a+x /docker.sh /plex-db-sync
 
 RUN apk add --update \

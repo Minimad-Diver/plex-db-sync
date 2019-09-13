@@ -20,10 +20,7 @@ ENV BACKUP=false \
     LOCAL_STOP='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop' \
     LOCAL_START='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'    
     
-VOLUME  /etc/localtime:/etc/localtime:ro \
-        /opt/appdata/plex-db-sync/sshkey:/sshkey \
-        /docker/plex/Library/Application Support/Plex Media Server/Plug-in Support/Databases/:/mnt/DB2 \
-        /var/run/docker.sock:/var/run/docker.sock
+VOLUME  ["/etc/localtime", "/sshkey", "/mnt/DB2", "/var/run/docker.sock"]
      
 RUN chmod a+x /docker.sh /plex-db-sync
 

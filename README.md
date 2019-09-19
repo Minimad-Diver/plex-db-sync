@@ -41,7 +41,7 @@ services:
 ## Options
 
 Docker Variable | Description  
------------- | --------------- | -----------  
+--------------- | -----------  
 `BACKUP` | Create a backup of the DB before running any SQL.  
 `DEBUG` | Print debug output.  
 `DRYRUN` | Don't apply changes to the DB.  

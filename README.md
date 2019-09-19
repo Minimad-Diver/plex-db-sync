@@ -54,5 +54,5 @@ n/a | Don't compare version db of Plex server.
 `REMOTE_SSH_KEY` | The SSH identity file.  
 `REMOTE_SSH_USER` | The SSH user.  
 `REMOTE_SSH_HOST` | The SSH host.  
-n/a | `REMOTE_SSH_PORT` | The SSH port.  
-n/a | `REMOTE_SSH_PATH` | Path to the database file on the SSH server.  
+`REMOTE_SSH_PORT` | The SSH port.  
+`REMOTE_SSH_PATH` | Path to the database file on the SSH server.  

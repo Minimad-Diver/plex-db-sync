@@ -26,7 +26,7 @@ if [ -n "${REMOTE_SSH_KEY}" ] && [ -n "${REMOTE_SSH_PORT}" ] && [ -n "${REMOTE_S
 	echo -e "echo \x22[\`date\`] Mounting sshfs for server 1...\x22" >> /cron-script
 	echo -e "sshfs -o allow_other,cache=no,no_readahead,noauto_cache,StrictHostKeyChecking=no,IdentityFile=\x22${REMOTE_SSH_KEY}\x22 -p ${REMOTE_SSH_PORT} ${REMOTE_SSH_USER}@${REMOTE_SSH_HOST}:\x22${REMOTE_SSH_PATH}\x22 /mnt/S1" >> /cron-script
 fi
-if [ "${LOCAL_PATH_IS_SSH}" = "true" || "${LOCAL_PATH_IS_SSH}" = "yes" ]; then
+if [[ "${LOCAL_PATH_IS_SSH}" == [Tt]rue ]] || [[ "${LOCAL_PATH_IS_SSH}" == [Yy]es ]]; then
 	if [ -n "${LOCAL_SSH_KEY}" ] && [ -n "${LOCAL_SSH_PORT}" ] && [ -n "${LOCAL_SSH_USER}" ] && [ -n "${LOCAL_SSH_HOST}" ] && [ -n "${LOCAL_DB_PATH}" ]; then
 		mkdir -p /mnt/S2
 		V_LOCAL_DB_PATH="/mnt/S2"
@@ -38,7 +38,7 @@ echo -e "/plex-db-sync --dry-run \x22${V_DRYRUN}\x22 --backup \x22${V_BACKUP}\x2
 if [ -n "${REMOTE_SSH_KEY}" ] && [ -n "${REMOTE_SSH_PORT}" ] && [ -n "${REMOTE_SSH_USER}" ] && [ -n "${REMOTE_SSH_HOST}" ] && [ -n "${REMOTE_DB_PATH}" ]; then
 	echo "umount /mnt/S1" >> /cron-script
 fi
-if [ "${LOCAL_PATH_IS_SSH}" = "true" || "${LOCAL_PATH_IS_SSH}" = "yes" ]; then
+if [[ "${LOCAL_PATH_IS_SSH}" == [Tt]rue ]] || [[ "${LOCAL_PATH_IS_SSH}" == [Yy]es ]]; then
 	if [ -n "${LOCAL_SSH_KEY}" ] && [ -n "${LOCAL_SSH_PORT}" ] && [ -n "${LOCAL_SSH_USER}" ] && [ -n "${LOCAL_SSH_HOST}" ] && [ -n "${LOCAL_DB_PATH}" ]; then
 		echo "umount /mnt/S2" >> /cron-script
 	fi

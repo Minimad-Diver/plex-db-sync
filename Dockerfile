@@ -8,7 +8,6 @@ ENV BACKUP=false \
     DEBUG=false \
     INITIALRUN=false \
     DRYRUN=false \
-    LOCAL_PLEX_NAME=plex \
     CRON="0 4 * * *" \
     REMOTE_SSH_KEY=/sshkey \
     REMOTE_SSH_USER=root \

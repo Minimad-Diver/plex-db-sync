@@ -35,6 +35,7 @@ services:
       - REMOTE_DB_PATH=/docker/plex/database/Library/Application Support/Plex Media Server/Plug-in Support/Databases
       - REMOTE_START=ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker start plex'
       - REMOTE_STOP=ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker stop plex'
+      - LOCAL_PLEX_NAME=plex
       - LOCAL_PATH_IS_SSH=false
       - LOCAL_DB_PATH=/mnt/DB2
       - LOCAL_START=cd /docker; docker-compose up -d plex
@@ -50,6 +51,7 @@ Docker Variable | Description  |  Default
 `DEBUG` | Print debug output.  |  false  
 `DRYRUN` | Don't apply changes to the DB.  |  false  
 `LOCAL_PATH_IS_SSH` | Also handle the Local DB as a Remote SSH host. (wip) |  false  
+`LOCAL_PLEX_NAME`  |  The name of your Plex docker container |  plex  
 `LOCAL_DB_PATH` | Location of the server's DB.  |  /mnt/DB2  
 `LOCAL_START` | The command to start the Plex server.  |  curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start    
 `LOCAL_STOP` | The command to stop the Plex server.  |  curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop  

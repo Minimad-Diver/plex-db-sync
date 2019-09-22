@@ -17,6 +17,7 @@ ENV BACKUP=false \
     REMOTE_STOP="ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker stop plex'" \
     REMOTE_START="ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker start plex'" \
     LOCAL_PATH_IS_SSH=false \
+    LOCAL_PLEX_NAME=plex \
     LOCAL_DB_PATH=/mnt/DB2 \
     LOCAL_STOP='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop' \
     LOCAL_START='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'

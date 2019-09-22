@@ -13,12 +13,14 @@ ENV BACKUP=false \
     REMOTE_SSH_KEY=/sshkey \
     REMOTE_SSH_USER=root \
     REMOTE_SSH_HOST=hostname \
-    REMOTE_SSH_PATH="/opt/appdata/plex/Library/Application Support/Plex Media Server/Plug-in Support/Databases" \
+    REMOTE_DB_PATH="/opt/appdata/plex/Library/Application Support/Plex Media Server/Plug-in Support/Databases" \
     REMOTE_STOP="ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker stop plex'" \
     REMOTE_START="ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker start plex'" \
+    LOCAL_PATH_IS_SSH=false \
     LOCAL_DB_PATH=/mnt/DB2 \
     LOCAL_STOP='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop' \
-    LOCAL_START='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'    
+    LOCAL_START='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'
+    
          
 RUN chmod a+x /docker.sh /plex-db-sync
 

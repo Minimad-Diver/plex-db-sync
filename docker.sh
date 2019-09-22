@@ -15,8 +15,8 @@ V_DEBUG="false"; if [ -n "${DEBUG}" ]; then V_DEBUG="${DEBUG}"; fi
 V_DRYRUN="false"; if [ -n "${DRYRUN}" ]; then V_DRYRUN="${DRYRUN}"; fi
 V_TMPFOLDER="/tmp/plex-db-sync"; if [ -n "${TMPFOLDER}" ]; then V_TMPFOLDER="${TMPFOLDER}"; fi
 V_CRON="0 4 * * *"; if [ -n "${CRON}" ]; then V_CRON="${CRON}"; fi
-V_REMOTE_STOP="docker stop plex"; if [ -n "${REMOTE_STOP}" ]; then V_REMOTE_STOP="ssh -oStrictHostKeyChecking=no -i ${REMOTE_SSH_KEY} -p ${REMOTE_SSH_PORT} ${REMOTE_SSH_USER}@${REMOTE_SSH_HOST} '${REMOTE_STOP}'"
-V_REMOTE_START="docker start plex"; if [ -n "${REMOTE_START}" ]; then V_REMOTE_START="ssh -oStrictHostKeyChecking=no -i ${REMOTE_SSH_KEY} -p ${REMOTE_SSH_PORT} ${REMOTE_SSH_USER}@${REMOTE_SSH_HOST} '${REMOTE_START}'"
+V_REMOTE_STOP="docker stop plex"; if [ -n "${REMOTE_STOP}" ]; then V_REMOTE_STOP="ssh -oStrictHostKeyChecking=no -i ${REMOTE_SSH_KEY} -p ${REMOTE_SSH_PORT} ${REMOTE_SSH_USER}@${REMOTE_SSH_HOST} '${REMOTE_STOP}'"; fi
+V_REMOTE_START="docker start plex"; if [ -n "${REMOTE_START}" ]; then V_REMOTE_START="ssh -oStrictHostKeyChecking=no -i ${REMOTE_SSH_KEY} -p ${REMOTE_SSH_PORT} ${REMOTE_SSH_USER}@${REMOTE_SSH_HOST} '${REMOTE_START}'"; fi
 
 
 echo "#!/bin/bash" > /cron-script

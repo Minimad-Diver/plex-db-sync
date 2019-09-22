@@ -13,7 +13,7 @@ ENV BACKUP=false \
     REMOTE_SSH_KEY=/sshkey \
     REMOTE_SSH_USER=root \
     REMOTE_SSH_HOST=hostname \
-    REMOTE_DB_PATH="/opt/appdata/plex/Library/Application Support/Plex Media Server/Plug-in Support/Databases" \
+    REMOTE_DB_PATH="/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-in Support/Databases" \
     REMOTE_STOP="ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker stop plex'" \
     REMOTE_START="ssh -oStrictHostKeyChecking=no -i /sshkey root@hostname 'docker start plex'" \
     LOCAL_PATH_IS_SSH=false \

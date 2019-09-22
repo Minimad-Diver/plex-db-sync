@@ -37,6 +37,8 @@ docker run -d \
 -e LOCAL_START="'curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'" \
 -v "/home/user/.ssh/id_rsa:/sshkey" \
 -v "/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-in Support/Databases:/mnt/DB2" \
+-v "/var/run/docker.sock:/var/run/docker.sock" \
+-v "/etc/localtime:/etc/localtime:ro" \
 lusky3/plex-db-sync
 ```
 
@@ -55,6 +57,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./plex-db-sync/sshkey:/sshkey
       - /docker/plex/database/Library/Application Support/Plex Media Server/Plug-in Support/Databases/:/mnt/DB2
+      - /var/run/docker.sock:/var/run/docker.sock
     cap_add:
       - SYS_ADMIN
     devices:

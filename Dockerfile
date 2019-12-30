@@ -19,8 +19,8 @@ ENV BACKUP=false \
     LOCAL_PATH_IS_SSH=false \
     LOCAL_PLEX_NAME=plex \
     LOCAL_DB_PATH=/mnt/DB2 \
-    LOCAL_STOP='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop' \
-    LOCAL_START='curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'
+    LOCAL_STOP='curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/plex/stop' \
+    LOCAL_START='curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/plex/start'
     
          
 RUN chmod a+x /docker.sh /plex-db-sync

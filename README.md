@@ -33,8 +33,8 @@ docker run -d \
 -e LOCAL_PATH_IS_SSH=false \
 -e LOCAL_PLEX_NAME=plex \
 -e LOCAL_DB_PATH="/mnt/DB2" \
--e LOCAL_STOP="'curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop'" \
--e LOCAL_START="'curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start'" \
+-e LOCAL_STOP="'curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/plex/stop'" \
+-e LOCAL_START="'curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/plex/start'" \
 -v "/home/user/.ssh/id_rsa:/sshkey" \
 -v "/opt/appdata/plex/database/Library/Application Support/Plex Media Server/Plug-in Support/Databases:/mnt/DB2" \
 -v "/var/run/docker.sock:/var/run/docker.sock" \
@@ -91,8 +91,8 @@ Docker Variable | Description  |  Default
 `LOCAL_PATH_IS_SSH` | Also handle the Local DB as a Remote SSH host. (wip) |  false  
 `LOCAL_PLEX_NAME`  |  The name of your Plex docker container |  plex  
 `LOCAL_DB_PATH` | Location of the server's DB.  |  /mnt/DB2  
-`LOCAL_START` | The command to start the Plex server.  |  curl --unix-socket /var/run/docker.sock -X POST /containers/plex/start    
-`LOCAL_STOP` | The command to stop the Plex server.  |  curl --unix-socket /var/run/docker.sock -X POST /containers/plex/stop  
+`LOCAL_START` | The command to start the Plex server.  |  curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/plex/start    
+`LOCAL_STOP` | The command to stop the Plex server.  |  curl --unix-socket /var/run/docker.sock -X POST http://localhost/containers/plex/stop  
 n/a | Don't compare version db of Plex server.  |  
 `CRON` | A string that defines when the script should run in crond (Default is 4AM).  |  0 4 * * *  
 `INITIALRUN` | Run at start prior to starting cron.  |  false  

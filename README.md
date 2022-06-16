@@ -1,7 +1,9 @@
 # plex-db-sync
 Synchronizes the database watched status between two Plex servers. This includes watched times, and works for all users on the system without the need for tokens.
 
-This is a fork of the Fmstrat/plex-db-sync with focus specifically on Docker usage.
+This is a fork of the Fmstrat/plex-db-sync and lusky3/plex-db-sync with focus on two Docker containers within Unraid.
+
+### THINGS MIGHT NOT WORK YE ###
 
 ## Deployment
 
